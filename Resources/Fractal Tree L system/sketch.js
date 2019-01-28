@@ -12,7 +12,7 @@
 // 2 a: "X",  b: "F+[[X]-X]-F[-FX]+X" b: "F+[[X]-X]-F[+FX]+X"  b: "F+[[X]-X]-F[-FX]+FX"
 // 2 
 
-var Cannvass;
+var Canvass;
 var len = 100;
 var angle;
 
@@ -95,7 +95,8 @@ function turtle(){
 
 
 function setup() {
-    Cannvass = createCanvas(400,420);
+    Canvass = createCanvas(400,420);
+    Canvass.parent("canvas");
     background(51);
     //noCanvas();
     angle = radians(-25);
@@ -109,16 +110,6 @@ function setup() {
 
 
 
-
-function keyPressed() {
-    
-    if(keyCode == DELETE){
-        console.log('Animation Stopped');
-        noLoop();
-        name = 'Fern'
-        saveCanvas(Cannvass, name, 'jpg');
-    }
-}
 
 
 
