@@ -11,7 +11,9 @@ function resetSketch(){
 }
 
 function setup() {
-    Cannvass = createCanvas(750,410);
+    xwidth = Math.min(window.innerWidth,750);
+    yheight = Math.min(window.innerHeight,410);
+    Cannvass = createCanvas(xwidth,yheight);
     Cannvass.parent("canvas");
     noLoop();    
 }
@@ -25,9 +27,6 @@ function draw() {
     stroke(255);
     strokeWeight(3);
     branch(len);
-
-    //noLoop();
-
 }
 
 
@@ -74,18 +73,6 @@ function branch(len) {
 
 
 
-
-
-
-function keyPressed() {
-    
-    if(keyCode == DELETE){
-        console.log('Animation Stopped');
-        noLoop();
-       // name = 'TheTreeID' + seedID;
-        //saveCanvas(Cannvass, name, 'jpg');
-    }
-}
 
 
 

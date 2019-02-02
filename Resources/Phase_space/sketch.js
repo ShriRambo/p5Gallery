@@ -34,7 +34,9 @@ function reSetup(){
 
 
 function setup() {
-  Canvass = createCanvas(400, 400);   // Canvas size
+  xwidth = Math.min(window.innerWidth,400);
+  yheight = Math.min(window.innerHeight,400);
+  Canvass = createCanvas(xwidth, xwidth);   // Canvas size
   Canvass.parent("canvas");
   reSetup();
   noLoop();

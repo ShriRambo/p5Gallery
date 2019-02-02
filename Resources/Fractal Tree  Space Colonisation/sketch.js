@@ -6,7 +6,9 @@ var min_dist = 10;
 var nLeaves = 600;
 
 function setup() {
-    Canvass = createCanvas(400,400);
+    xwidth = Math.min(window.innerWidth,400);
+    yheight = Math.min(window.innerHeight,400);
+    Canvass = createCanvas(xwidth,yheight);
     Canvass.parent("canvas");
     tree = new Tree();
     noLoop();

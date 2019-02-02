@@ -1,4 +1,4 @@
-var Cannvass;
+var Canvass;
 //
 const key = "AIzaSyCy6EDCZBsYMyPxx1sGkkRxFoipUx4jHoc";
 
@@ -6,7 +6,7 @@ var sketches = [];
 var nx = 10;
 var ny = 6;
 var nsketches = nx*ny;
-var sca = 0.5; 
+var sca = 0.25; 
 
 let x,y;
 let strokeIndex = 0;
@@ -17,6 +17,24 @@ let sketchIndexes = [];
 let ncoutn = 0;
 
 
+function resetSketch(){
+    loop();
+    reSetup();
+}
+
+function reSetup(){
+    background(255);
+    ncoutn = 0;
+
+    for (var i=0; i<sketches.length; i++){
+        sketchIndexes.push(i);
+    }
+
+    sketchIndexes = shuffle(sketchIndexes);
+    sketchIndex = sketchIndexes.pop();
+    //ncoutn++;
+    loop();
+}
 function preload(){
     for (let i = 0; i < nsketches; i++){
         category =  random(categories).category;
@@ -43,18 +61,10 @@ function getLink(category, id=false, isAnimated=false){
    
 
 function setup() {
-    Cannvass = createCanvas(20 + 255*sca*nx,20 + 255*sca*ny);
-    background(255);
-    //colorMode(HSB);
-
-    for (var i=0; i<sketches.length; i++){
-        sketchIndexes.push(i);
-    }
-
-    sketchIndexes = shuffle(sketchIndexes);
-    sketchIndex = sketchIndexes.pop();
-    //ncoutn++;
-    
+    Canvass = createCanvas(20 + 255*sca*nx,20 + 255*sca*ny);
+    Canvass.parent("canvas");
+    reSetup();
+    noLoop();
    
 }
 
@@ -168,16 +178,7 @@ function draw() {
 
 
 
-
-function keyPressed() {
-    
-    if(keyCode == DELETE){
-        console.log('Animation Stopped');
-        noLoop();
-        name = 'Quickdraw';
-        saveCanvas(Cannvass, name, 'jpg');
-    }
+function saveIT(){
+    saveCanvas(Cannvass, "Sketch",'jpg');
 }
-
-
 

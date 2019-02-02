@@ -21,7 +21,9 @@ function reSetup(){
 
 }
 function setup() {
-    Canvass =  createCanvas(window.innerWidth/2, window.innerHeight/2);
+    xwidth = Math.min(window.innerWidth,1024*0.7);
+    yheight = Math.min(window.innerHeight,786*0.7);
+    Canvass =  createCanvas(xwidth, yheight);
     Canvass.parent("canvas");
     reSetup();
     frameRate(30);
