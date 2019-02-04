@@ -96,8 +96,7 @@ img {margin-bottom: -7px}
             </div>
             <div class="w3-center">
               <button class="w3-button w3-black" onclick="sk1.resetSketch()">Run</button>
-              <button class="w3-button w3-black" onclick="sk1.noLoop()">Pause</button>
-              <button class="w3-button w3-black" onclick="sk1.loop()">Resume</button>
+              <button class="w3-button w3-black" onclick="pauseToggle()"    id="pauseToggle">Pause</button>
               <button class="w3-button w3-black" onclick="sk1.saveIT()">Save</button>
             </div>
     
@@ -152,6 +151,25 @@ function onClick(element) {
   var captionText = document.getElementById("caption");
   captionText.innerHTML = element.alt;
 }
+
+
+
+function pauseToggle(){
+  var pBtn = document.getElementById("pauseToggle")
+
+  if(sk1.animRunning && pBtn.innerHTML == "Pause"){
+    sk1.noLoop();
+    sk1.animRunning = false;
+    pBtn.innerHTML = "Resume"
+  }
+  else if(!sk1.animRunning && pBtn.innerHTML == "Resume"){
+    sk1.loop();
+    sk1.animRunning = true;
+    pBtn.innerHTML = "Pause";
+  }
+
+}
+
 
 
 </script>

@@ -1,10 +1,15 @@
 var symbolSize = 25
 var streams;
 var Canvass
+var wasFullScreen = false;
+var animRunning = false;
 
 
 function resetSketch(){
     loop();
+    animRunning = true;
+    var pBtn = document.getElementById("pauseToggle");
+    pBtn.innerHTML = "Pause";
     reSetup();
 }
 
@@ -28,12 +33,13 @@ function setup() {
     reSetup();
     frameRate(30);
     noLoop();
+    animRunning = false;
 }
+
 
 
 function draw() {
     background(0, 150);
-    
    streams.forEach(function(stream){
        stream.render();
 });
@@ -101,6 +107,37 @@ function Stream() {
     }
     
 }
+
+
+//function windowResized() {
+//    xwidth = Math.min(window.innerWidth,1024*0.7);
+//    yheight = Math.min(window.innerHeight,786*0.7);
+//    resizeCanvas(xwidth, yheight);
+//  }
+
+function fullScreenChanged(){
+
+    console.log(wasFullScreen)
+
+
+    if(!wasFullScreen){
+        resizeCanvas(screen.width, screen.height);
+        toFullScreenMode();
+        wasFullScreen = true;
+    }
+    else{
+        xwidth = Math.min(window.innerWidth,1024*0.7);
+        yheight = Math.min(window.innerHeight,786*0.7);
+        resizeCanvas(xwidth, yheight);
+        wasFullScreen = false;
+        toNormalScreenMode();
+    }
+
+    resetSketch();
+    
+}
+
+
 
 
 function saveIT(){

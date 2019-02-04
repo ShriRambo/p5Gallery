@@ -7,9 +7,13 @@ var sketch1 = function(c){
     var seed = 0;
     var d = 0.75;
     var Cannvass;
+    var animRunning = false;
   
     c.resetSketch = function(){
         c.loop();
+        c.animRunning = true;
+        var pBtn = document.getElementById("pauseToggle");
+        pBtn.innerHTML = "Pause";
     }
     
     c.setup= function() {
