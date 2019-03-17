@@ -32,8 +32,8 @@ function draw() {
     
     n = 0;
     printPic();
-    ang += 0.0001; // slider.value();
-   //noLoop();
+    //ang += 0.0001; // slider.value();
+   noLoop();
 }
 
 
