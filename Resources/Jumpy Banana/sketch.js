@@ -229,7 +229,14 @@ function Pipe() {
 
 
 
+function mousePressed(){
+    if (gameOff) {
+        startGame();
+    } else {
+        bird.up();
+    }
 
+}
 
 
 
