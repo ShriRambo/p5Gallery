@@ -1,0 +1,57 @@
+
+body .hero {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white ;
+  /* url("./temp.jpeg"); */
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.headFrame {
+  position: absolute;
+  float: left;
+  clear: both;
+  width: 100%;
+  height: 350px;
+  z-index: 0;
+}
+
+/* body .hero:before {
+  content: '';
+  height: 100%;
+  width: 100%;
+  height: 170vh;
+  width: 100vw;
+  background: rgba(44, 123, 183, 0.5);
+  position: absolute;
+} */
+
+body .hero h1 {
+  position: relative;
+  z-index: 1;
+  font-family: 'Roboto Condensed', sans-serif;
+  color: rgb(56, 56, 56);
+  text-align: center;
+  font-size: 8rem;
+  line-height: 4rem;
+  text-shadow: 3px 4px 4px rgba(0, 0, 0, 0.35);
+  /* max-width: 25rem; */
+  margin: 30vh auto 0;
+}
+
+body .content {
+  position: absolute;
+  width: 100%;
+  z-index: 100;
+  top: 100vh;
+  background: #faf8f8;
+  /* height: 9000px; */
+  box-shadow: 0 -2px 1px rgba(0, 0, 0, 0.15);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}

@@ -6,79 +6,103 @@
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<link rel="stylesheet" href="./mystyle.css">
+<script type="text/javascript" src="./myscript.js"></script>
 <style>
-body,h1 {font-family: "Montserrat", sans-serif}
-img {margin-bottom: -7px}
-.w3-row-padding img {margin-bottom: 12px}
+  body,
+  h1 {
+    font-family: "Montserrat", sans-serif
+  }
+
+  img {
+    margin-bottom: -7px
+  }
+
+  .w3-row-padding img {
+    margin-bottom: 12px
+  }
 </style>
+
 <body>
 
-<!-- Sidebar -->
-<nav class="w3-sidebar w3-black w3-animate-top w3-xxlarge" style="display:none;padding-top:150px" id="mySidebar">
-  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:6px 24px">
-    <i class="fa fa-remove"></i>
-  </a>
-  <div class="w3-bar-block w3-center">
-    <a href="https://shrirambo.github.io/" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Home</a>
-    <a href="https://shrirambo.github.io/Gallery/gallery.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Artworks</a>
-    <a href="./index.html" class="w3-bar-item w3-button w3-text-grey w3-hover-black">Generative Art</a>
-  </div>
-</nav>
 
-<!--PAGE CONTENT! -->
-<div class="w3-content" style="max-width:1500px">
-
-    <!-- Header -->
+  <!--PAGE CONTENT! -->
+  <section class="hero">
+    <iframe src="./Resources/Header-sketch/index.html" frameborder="0" width="100%" height="100%" style="position: absolute; opacity: 0.5;"></iframe>
     <div class="w3-opacity">
-    <span class="w3-button w3-xxlarge w3-white w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span> 
-    <div class="w3-clear"></div>
-    <header class="w3-center w3-margin-bottom">
-    <h1><b>Generative Art</b></h1>
-    <br>
-    </header>
+      <span class="w3-button w3-xxlarge w3-black w3-right" onclick="w3_open()"><i class="fa fa-bars"></i></span>
+    </div>
+    <h1 style="text-align: left; padding-left: 10vw" onclick="function(){loop(); setTimeout(function(){noLoop();},10000)}"><b>Generative Art</b></h1>
+    <!-- Header -->
+  </section>
+
+  
+
+  <!-- Sidebar -->
+  <nav class="w3-sidebar w3-animate-top w3-xxlarge" style="display:none; background-color: rgba(0, 0, 0, 0.9)"
+    id="mySidebar">
+    <a href="javascript:void(0)" onclick="w3_close()"
+      class="w3-button w3-black w3-xxlarge w3-padding w3-display-topright" style="padding:20px 24px">
+      ✖
+    </a>
+
+    <div class="w3-bar-block w3-center" style="margin-top: 200px;">
+      <div style="align-content:left">
+        <a href="https://shrirambo.github.io/" class="w3-bar-item w3-button w3-text-grey w3-hover-black">🏠 Home</a>
+        <a href="/" class="w3-bar-item w3-button w3-text-grey w3-hover-black">📜 Blog</a>
+        <a href="https://shrirambo.github.io/Gallery/gallery.html"
+          class="w3-bar-item w3-button w3-text-grey w3-hover-black">🎨 Artworks</a>
+        <a href="" class="w3-bar-item w3-button w3-text-grey w3-hover-black">🤖 Generative Art</a>
+        <a href="" class="w3-bar-item w3-button w3-text-grey w3-hover-black">✉ Contact</a>
+      </div>
     </div>
 
-    <!-- Photo Grid -->
-    <div class="w3-row" id="myGrid" style="margin-bottom:128px">
-        
-        <!-- First Column -->
-        <div class="w3-third">
+  </nav>
+
+  <div style="position: relative">
+    <section class="content">
 
 
-        <!-- Sketch -->
-        <div class=" w3-container w3-margin-bottom w3-hover-shadow"
-          onclick="window.location.href ='./Resources/Avocado/index.html'; ">
-          <img src="./Resources/Avocado/thumbnail.png" alt="Avocado" style="width:100%; padding: 2%;">
-          <div class="w3-container w3-white">
-            <p><b>Avocado</b></p>
-            <p>Interactive svg Avocado animation</p>
-          </div>
-        </div>
-
-          <!-- Sketch -->
-          <div class=" w3-container w3-margin-bottom w3-hover-shadow"
-            onclick="window.location.href ='./Resources/Jumpy Banana/index.html'; ">
-            <img src="./Resources/Jumpy Banana/thumbnail.png" alt="Banana Jump" style="width:100%; padding: 2%;">
-            <div class="w3-container w3-white">
-              <p><b>Banana Jump</b></p>
-              <p>A simple endless game</p>
-            </div>
-          </div>
+      <div class="w3-content" style="max-width:1500px;">
 
 
-          <!-- Sketch -->
-          <div class=" w3-container w3-margin-bottom w3-hover-shadow"  onclick="window.location.href ='./Resources/Fractal Tree/blogpost.html'; " >
-            <img src="./Resources/Fractal Tree/thumbnail.jpg" alt="Fractal Tree" style="width:100%; padding: 2%;" >
-            <div class="w3-container w3-white">
-              <p><b>Fractal Tree</b></p>
-              <p>Recursively generated fractal tree which swayes according to the perlin noise.</p>
-            </div>
-          </div>
+
+        <!-- Photo Grid -->
+        <div class="w3-row" id="myGrid" style="margin-bottom:128px;margin-left: 2%;margin-right: 2%; padding-top: 3%;">
+
+          <!-- First Column -->
+          <div class="w3-third">
 
 
             <!-- Sketch -->
-            <div class=" w3-container w3-margin-bottom w3-hover-shadow"  onclick="window.location.href ='./Resources/Phase_space/blogpost.html'; " >
-              <img src="./Resources/Phase_space/thumb.png" alt="Phase Plane" style="width:100%; padding: 2%;" >
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Avocado/index.html'; ">
+              <img src="./Resources/Avocado/thumbnail.png" alt="Avocado" style="width:100%; padding: 2%;">
+              <div class="w3-container w3-white">
+                <p><b>🥑 Avocado</b></p>
+                <p>Interactive svg Avocado animation</p>
+              </div>
+            </div>
+
+
+
+
+            <!-- Sketch -->
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Fractal Tree/blogpost.html'; ">
+              <img src="./Resources/Fractal Tree/thumbnail.jpg" alt="Fractal Tree" style="width:100%; padding: 2%;">
+              <div class="w3-container w3-white">
+                <p><b>Fractal Tree</b></p>
+                <p>Recursively generated fractal tree which swayes according to the perlin noise.</p>
+              </div>
+            </div>
+
+
+            <!-- Sketch -->
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Phase_space/blogpost.html'; ">
+              <img src="./Resources/Phase_space/thumb.png" alt="Phase Plane" style="width:100%; padding: 2%;">
               <div class="w3-container w3-white">
                 <p><b>Phase Plane</b></p>
                 <p>Visualisation of the Phase Space of some interesting 2D dynamical systes.</p>
@@ -86,22 +110,25 @@ img {margin-bottom: -7px}
             </div>
 
 
-          <!-- Sketch -->
-          <div class=" w3-container w3-margin-bottom w3-hover-shadow"   onclick="window.location.href ='./Resources/Quick Draw Doodle color/blogpost.html'; " >
-            <img src="./Resources/Quick Draw Doodle color/thumb.jpg" alt="Google Quick draw doodler" style="width:100%; padding: 2%;" >
-            <div class="w3-container w3-white">
-              <p><b>Quick draw doodler</b></p>
-              <p>Using Google's <a href='https://quickdraw.withgoogle.com'>Quick Draw</a> dataset, this sketch generates a random doodles with colors.</p>
+            <!-- Sketch -->
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Quick Draw Doodle color/blogpost.html'; ">
+              <img src="./Resources/Quick Draw Doodle color/thumb.jpg" alt="Google Quick draw doodler"
+                style="width:100%; padding: 2%;">
+              <div class="w3-container w3-white">
+                <p><b>Quick draw doodler</b></p>
+                <p>Using Google's <a href='https://quickdraw.withgoogle.com'>Quick Draw</a> dataset, this sketch
+                  generates a random doodles with colors.</p>
+              </div>
             </div>
+
+
+
+
           </div>
 
-           
-
-
-        </div>
-
-        <!-- Second Column -->
-        <div class="w3-third">
+          <!-- Second Column -->
+          <div class="w3-third">
 
 
             <!-- Sketch -->
@@ -126,8 +153,9 @@ img {margin-bottom: -7px}
             </div>
 
             <!-- Sketch -->
-            <div class=" w3-container w3-margin-bottom w3-hover-shadow" onclick="window.location.href ='./Resources/Tree Rings/blogpost.html'; ">
-              <img src="./Resources/Tree Rings/thumb.png" alt="Tree Rings" style="width:100%; padding: 2%;" >
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Tree Rings/blogpost.html'; ">
+              <img src="./Resources/Tree Rings/thumb.png" alt="Tree Rings" style="width:100%; padding: 2%;">
               <div class="w3-container w3-white">
                 <p><b>Tree Rings</b></p>
                 <p>Randomly generated tree rings with perlin noise and grunge effect.</p>
@@ -136,53 +164,70 @@ img {margin-bottom: -7px}
 
 
             <!-- Sketch -->
-            <div class=" w3-container w3-margin-bottom w3-hover-shadow" onclick="window.location.href ='./Resources/Packing circles/blogpost.html'; ">
-              <img src="./Resources/Packing circles/thumb.jpg" alt="Packing circles" style="width:100%; padding: 2%;" >
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Packing circles/blogpost.html'; ">
+              <img src="./Resources/Packing circles/thumb.jpg" alt="Packing circles" style="width:100%; padding: 2%;">
               <div class="w3-container w3-white">
                 <p><b>Packing circles</b></p>
                 <p>Visualisation of algorithm for packing non-overlappnig circles in a region.</p>
               </div>
             </div>
-            
+
             <!-- Sketch -->
-            <div class=" w3-container w3-margin-bottom w3-hover-shadow" onclick="window.location.href ='./Resources/Fractal Tree L system/blogpost.html'; ">
-              <img src="./Resources/Fractal Tree L system/thumb.jpg" alt="L-Systems" style="width:100%; padding: 2%;" >
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Fractal Tree L system/blogpost.html'; ">
+              <img src="./Resources/Fractal Tree L system/thumb.jpg" alt="L-Systems" style="width:100%; padding: 2%;">
               <div class="w3-container w3-white">
                 <p><b>L-Systems</b></p>
-                <p>Lindenmayer system, a simple recursive writing system which then translated using the logic of turtle graphics to create such realistic plants.</p>
+                <p>Lindenmayer system, a simple recursive writing system which then translated using the logic of turtle
+                  graphics to create such realistic plants.</p>
               </div>
             </div>
 
-            
 
 
 
-        </div>
 
-        <!-- Third Column -->
-        <div class="w3-third">
+          </div>
 
-            <!-- Sketch -->
-            <div class=" w3-container w3-margin-bottom w3-hover-shadow" onclick="window.location.href ='./Resources/Matrix/blogpost.html'; ">
-                <img src="./Resources/Matrix/thumb.png" alt="Matrix" style="width:100%; padding: 2%;" >
-                <div class="w3-container w3-white">
-                  <p><b>Matrix</b></p>
-                  <p>The famous Matrix letterfall effect. Hope there is no glitch.</p>
-                </div>
-              </div>
+          <!-- Third Column -->
+          <div class="w3-third">
 
             <!-- Sketch -->
-            <div class=" w3-container w3-margin-bottom w3-hover-shadow" onclick="window.location.href ='./Resources/Fractal Tree  Space Colonisation/blogpost.html'; ">
-              <img src="./Resources/Fractal Tree  Space Colonisation/thumb.jpg" alt="Space Colonisation Algoritnm " style="width:100%; padding: 2%;" >
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Jumpy Banana/index.html'; ">
+              <img src="./Resources/Jumpy Banana/thumbnail.png" alt="Banana Jump" style="width:100%; padding: 2%;">
               <div class="w3-container w3-white">
-                <p><b>Space Colonisation Algoritnm  </b></p>
+                <p><b>Banana Jump</b></p>
+                <p>A simple endless game</p>
+              </div>
+            </div>
+
+            <!-- Sketch -->
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Matrix/blogpost.html'; ">
+              <img src="./Resources/Matrix/thumb.png" alt="Matrix" style="width:100%; padding: 2%;">
+              <div class="w3-container w3-white">
+                <p><b>Matrix</b></p>
+                <p>The famous Matrix letterfall effect. Hope there is no glitch.</p>
+              </div>
+            </div>
+
+            <!-- Sketch -->
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Fractal Tree  Space Colonisation/blogpost.html'; ">
+              <img src="./Resources/Fractal Tree  Space Colonisation/thumb.jpg" alt="Space Colonisation Algoritnm "
+                style="width:100%; padding: 2%;">
+              <div class="w3-container w3-white">
+                <p><b>Space Colonisation Algoritnm </b></p>
                 <p>Generating fractal trees using Space Colonisation Algoritnm.</p>
               </div>
             </div>
 
             <!-- Sketch -->
-            <div class=" w3-container w3-margin-bottom w3-hover-shadow"  onclick="window.location.href ='./Resources/Random_rings/blogpost.html'; "  >
-              <img src="./Resources/Random_rings/thumb.png" alt="Random Rings" style="width:100%; padding: 2%;"  >
+            <div class=" w3-container w3-margin-bottom w3-hover-shadow"
+              onclick="window.location.href ='./Resources/Random_rings/blogpost.html'; ">
+              <img src="./Resources/Random_rings/thumb.png" alt="Random Rings" style="width:100%; padding: 2%;">
               <div class="w3-container w3-white">
                 <p><b>Random Rings</b></p>
                 <p>A simple animation using randomness on multiple levels.</p>
@@ -195,75 +240,60 @@ img {margin-bottom: -7px}
               <img src="./Resources/Phyllotaxis/thumb.jpg" alt="Phyllotaxis" style="width:100%; padding: 2%;">
               <div class="w3-container w3-white">
                 <p><b>Phyllotaxis</b></p>
-                <p>Beautiful pattern found in nature and its relation to the irrational numbers. Smart nature, always attains the
+                <p>Beautiful pattern found in nature and its relation to the irrational numbers. Smart nature, always
+                  attains the
                   most efficient configuration.</p>
               </div>
             </div>
 
-            
+
+          </div>
+
+          <!-- End of Photo Grid -->
         </div>
 
-    <!-- End of Photo Grid --> 
-    </div>
-
-    
-
-  <!-- Modal for full size images on click     <iframe id="img01" onload="this.width=screen.width;this.height=screen.height;" ></iframe>   Unused here  -->
-  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
-    <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
-    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64" >
-        <img id="img01" class="w3-image" style="width:80%; position: center;">
-        <p id="caption"></p>
-    </div>
-    </div>
-
-<!-- End Page Content -->
-</div>
-
-<!-- Footer -->
-<footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px"> 
-  <a href='https://www.instagram.com/shri_rambo/'><i class="fa fa-instagram w3-hover-opacity"></i></a>
-  <a href='https://www.linkedin.com/in/shriram-ashirgade/'><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank" class="w3-hover-text-green">w3.css</a></p>
-</footer>
- 
-<script>
-// Toggle grid padding
-function myFunction() {
-  var x = document.getElementById("myGrid");
-  if (x.className === "w3-row") {
-    x.className = "w3-row-padding";
-  } else { 
-    x.className = x.className.replace("w3-row-padding", "w3-row");
-  }
-}
-
-// Function to redirect to other page Unused.
-function gotothispage(link){
-window.location.href = link;
-}
-
-// Open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.width = "100%";
-  document.getElementById("mySidebar").style.display = "block";
-}
-
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-
-// Modal Image Gallery
-function onClick(element) {
-    console.log("Image clicked")
-  document.getElementById("img01").src = element.src;
-  document.getElementById("modal01").style.display = "block";
-  var captionText = document.getElementById("caption");
-  captionText.innerHTML = element.alt;
-}
 
 
-</script>
+        <!-- Modal for full size images on click     <iframe id="img01" onload="this.width=screen.width;this.height=screen.height;" ></iframe>   Unused here  -->
+        <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+          <span class="w3-button w3-black w3-xlarge w3-display-topright">×</span>
+          <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img id="img01" class="w3-image" style="width:80%; position: center;">
+            <p id="caption"></p>
+          </div>
+        </div>
+
+        <!-- End Page Content -->
+      </div>
+
+      <!-- Footer -->
+      <footer class="w3-container w3-padding-64 w3-light-grey w3-center w3-opacity w3-xlarge" style="margin-top:128px">
+        <a href='https://www.instagram.com/shri_rambo/'><i class="fa fa-instagram w3-hover-opacity"></i></a>
+        <a href='https://www.linkedin.com/in/shriram-ashirgade/'><i class="fa fa-linkedin w3-hover-opacity"></i></a>
+        <p class="w3-medium">Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"
+            class="w3-hover-text-green">w3.css</a></p>
+      </footer>
+
+    </section>
+  </div>
+
+  <script>
+    // Function to redirect to other page Unused.
+    function gotothispage(link) {
+      window.location.href = link;
+    }
+
+    // Open and close sidebar
+    function w3_open() {
+      document.getElementById("mySidebar").style.width = "100%";
+      document.getElementById("mySidebar").style.display = "block";
+    }
+
+    function w3_close() {
+      document.getElementById("mySidebar").style.display = "none";
+    }
+  </script>
 
 </body>
+
 </html>
